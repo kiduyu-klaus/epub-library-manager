@@ -65,6 +65,7 @@ def count_rows_in_csv(file_path):
         return 0
 
         
-clean_url_column1('books_final_redone.csv', 'books_final_redone1.csv')
-row_count = count_rows_in_csv('books_final_redone1.csv')
-print(f"Total rows in books_final_redone1.csv: {row_count}")
+#clean_url_column1('books_final_redone.csv', 'books_final_redone1.csv')
+clean_url_column('subcategories.csv', 'subcategories1.csv')
+row_count = count_rows_in_csv('subcategories1.csv')
+print(f"Total rows in subcategories1.csv: {row_count}")

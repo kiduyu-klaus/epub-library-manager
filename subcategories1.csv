@@ -1,0 +1,61 @@
+sid,cat_id,sub_cat_name,sub_cat_image,status
+1,1,Psychology,upload/Psychology.jpg,1
+2,1,Fiction,upload/Fiction.jpg,1
+3,1,Business,upload/Business.jpg,1
+4,1,Nonfiction,upload/Nonfiction.jpg,1
+5,1,Paranormal,upload/Paranormal.jpg,1
+6,1,Anthologies,upload/Anthologies.jpg,1
+7,1,Christianity,upload/Christianity.jpg,1
+8,1,Erotica,upload/Erotica.jpg,1
+9,1,Harlequin,upload/Harlequin.jpg,1
+10,1,Harlequin Romance,upload/Harlequin Romance.jpg,1
+11,1,Crime,upload/Crime.jpg,1
+12,1,Mystery,upload/Mystery.jpg,1
+13,1,Historical Romance,upload/Historical Romance.jpg,1
+14,1,Noir,upload/Noir.jpg,1
+15,1,Spirituality,upload/Spirituality.jpg,1
+16,1,Romance,upload/Romance.jpg,1
+17,1,Fantasy,upload/Fantasy.jpg,1
+18,1,Harlequin Presents,upload/Harlequin Presents.jpg,1
+19,1,Contemporary Romance,upload/Contemporary Romance.jpg,1
+20,1,Contemporary,upload/Contemporary.jpg,1
+21,1,Horror,upload/Horror.jpg,1
+22,1,Buddhism,upload/Buddhism.jpg,1
+23,1,Music,upload/Music.jpg,1
+24,1,Menage,upload/Menage.jpg,1
+25,1,Vampires,upload/Vampires.jpg,1
+26,1,Young Adult,upload/Young Adult.jpg,1
+27,1,Novels,upload/Novels.jpg,1
+28,1,Dark,upload/Dark.jpg,1
+29,1,Star Wars,upload/Star Wars.jpg,1
+30,1,Harlequin Blaze,upload/Harlequin Blaze.jpg,1
+31,1,History,upload/History.jpg,1
+32,1,Aliens,upload/Aliens.jpg,1
+33,1,Science Fiction Romance,upload/Science Fiction Romance.jpg,1
+34,1,Historical Fiction,upload/Historical Fiction.jpg,1
+35,1,Shapeshifters,upload/Shapeshifters.jpg,1
+36,1,Science Fiction,upload/Science Fiction.jpg,1
+37,1,Cozy Mystery,upload/Cozy Mystery.jpg,1
+38,1,Interracial Romance,upload/Interracial Romance.jpg,1
+39,1,Military Fiction,upload/Military Fiction.jpg,1
+40,1,Poetry,upload/Poetry.jpg,1
+41,1,Reverse Harem,upload/Reverse Harem.jpg,1
+42,1,M M Romance,upload/M M Romance.jpg,1
+43,1,Dragons,upload/Dragons.jpg,1
+44,1,Second Chance,upload/Second Chance.jpg,1
+45,1,Urban Fantasy,upload/Urban Fantasy.jpg,1
+46,1,Halloween,upload/Halloween.jpg,1
+47,1,Thriller,upload/Thriller.jpg,1
+48,1,Humor,upload/Humor.jpg,1
+49,1,Childrens,upload/Childrens.jpg,1
+50,1,Biography,upload/Biography.jpg,1
+51,1,Action,upload/Action.jpg,1
+52,1,Christmas,upload/Christmas.jpg,1
+53,1,Enemies To Lovers,upload/Enemies To Lovers.jpg,1
+54,1,Short Stories,upload/Short Stories.jpg,1
+55,1,Christian Non Fiction,upload/Christian Non Fiction.jpg,1
+56,1,Christian,upload/Christian.jpg,1
+57,1,Legal Thriller,upload/Legal Thriller.jpg,1
+58,1,Paranormal Romance,upload/Paranormal Romance.jpg,1
+59,1,Mystery Thriller,upload/Mystery Thriller.jpg,1
+60,1,Science Fiction Fantasy,upload/Science Fiction Fantasy.jpg,1
