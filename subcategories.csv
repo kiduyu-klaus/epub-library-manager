@@ -1,0 +1,50 @@
+sid,cat_id,sub_cat_name,sub_cat_image,status
+
+1,1,Psychology,Psychology.jpg,1
+2,1,Fiction,Fiction.jpg,1
+3,1,Business,Business.jpg,1
+4,1,Nonfiction,Nonfiction.jpg,1
+5,1,Paranormal,Paranormal.jpg,1
+6,1,Anthologies,Anthologies.jpg,1
+7,1,Christianity,Christianity.jpg,1
+8,1,Erotica,Erotica.jpg,1
+9,1,Harlequin,Harlequin.jpg,1
+10,1,Harlequin Romance,Harlequin Romance.jpg,1
+11,1,Crime,Crime.jpg,1
+12,1,Mystery,Mystery.jpg,1
+13,1,Historical Romance,Historical Romance.jpg,1
+14,1,Noir,Noir.jpg,1
+15,1,Spirituality,Spirituality.jpg,1
+16,1,Romance,Romance.jpg,1
+17,1,Fantasy,Fantasy.jpg,1
+18,1,Harlequin Presents,Harlequin Presents.jpg,1
+19,1,Contemporary Romance,Contemporary Romance.jpg,1
+20,1,Contemporary,Contemporary.jpg,1
+21,1,Horror,Horror.jpg,1
+22,1,Buddhism,Buddhism.jpg,1
+23,1,Music,Music.jpg,1
+24,1,Menage,Menage.jpg,1
+25,1,Vampires,Vampires.jpg,1
+26,1,Young Adult,Young Adult.jpg,1
+27,1,Novels,Novels.jpg,1
+28,1,Dark,Dark.jpg,1
+29,1,Star Wars,Star Wars.jpg,1
+30,1,Harlequin Blaze,Harlequin Blaze.jpg,1
+31,1,History,History.jpg,1
+32,1,Aliens,Aliens.jpg,1
+33,1,Science Fiction Romance,Science Fiction Romance.jpg,1
+34,1,Historical Fiction,Historical Fiction.jpg,1
+35,1,Shapeshifters,Shapeshifters.jpg,1
+36,1,Science Fiction,Science Fiction.jpg,1
+37,1,Cozy Mystery,Cozy Mystery.jpg,1
+38,1,Interracial Romance,Interracial Romance.jpg,1
+39,1,Military Fiction,Military Fiction.jpg,1
+40,1,Poetry,Poetry.jpg,1
+41,1,Reverse Harem,Reverse Harem.jpg,1
+42,1,M M Romance,M M Romance.jpg,1
+43,1,Dragons,Dragons.jpg,1
+44,1,Second Chance,Second Chance.jpg,1
+45,1,Urban Fantasy,Urban Fantasy.jpg,1
+46,1,Halloween,Halloween.jpg,1
+47,1,Thriller,Thriller.jpg,1
+48,1,Humor,Humor.jpg,1

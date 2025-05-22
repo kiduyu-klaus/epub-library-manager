@@ -1,0 +1,19 @@
+
+C:\xampp8.2\htdocs\php_web_services\uploads\1975_Believe_This_You'll_Believe.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\1982_We'll_Share_a_Double_Funer_-_Unknown.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\20-Witness_to_Murder_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\21-Street_Spies_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\22-Double_Exposure_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\23-Disaster_for_Hire_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\24-Scene_of_the_Crime_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\25-The_Borderline_Case_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\26-Trouble_in_the_Pipeline_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\27-Nowhere_to_Run_-_Franklin_W._Dixon.epub
+C:\xampp8.2\htdocs\php_web_services\uploads\Bakery_Detectives_Cozy_Mystery_-_Stacey_Alabaster_2.epub
+
+
+give sample paths above,python function to return just the author name from the path
+
+example 
+C:\xampp8.2\htdocs\php_web_services\uploads\Bakery_Detectives_Cozy_Mystery_-_Stacey_Alabaster_2.epub should return Stacey Alabaster
+
