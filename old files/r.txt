@@ -1,0 +1,86 @@
+starts = r'C:\cracks\My_App\epub-library-manager\allbooks'
+current_folder = os.path.basename(starts)
+
+
+# Create the 'books' directory if it doesn't exist
+books_folder = os.path.join(os.getcwd(), 'books')
+os.makedirs(books_folder, exist_ok=True)
+
+
+# Set the path for the current CSV file in the 'books' directory
+current_csv = os.path.join(books_folder, current_folder.replace(' ', '_') + '.csv')
+
+# Create the CSV file if it doesn't exist
+if not os.path.exists(current_csv):
+    with open(current_csv, mode='w', newline='') as csv_file:
+        pass
+
+# Main EPUB loop
+for root, dirs, files in os.walk(starts):
+    for file in files:
+        if file.endswith('.epub') or file.endswith('.ePub'):
+            book_url_local = file
+            epub_path = os.path.join(root, file)
+            book_title, author_name = parse_filename(file)
+
+            if not book_title or not author_name:
+                print(f"❌ Skipping '{file}' due to missing title or author.")
+                continue
+
+            book_url_local = file.replace(' ', '_')
+            if not is_book_in_csv(book_url_local, current_csv):
+                bookname = f"{book_title} by {author_name}"
+                print(f'----> Working on {bookname}')
+                
+                search_url = GOODREADS_URL + '/search?' + urllib.parse.urlencode({'q': bookname})
+                #print(f"  🔍 Searching: {search_url} for '{book_title}' by '{author_name}'")
+
+                goodreads_url = scrape_goodreads_books(search_url, author_name, book_title)
+                # 🎯 Add genre lookup here
+                #genre = get_book_genre_with_gemini(book_title, author_name)
+                #print(f"  📚 Genre: {genre}")
+                if goodreads_url:
+                    headers = {'User-Agent': random.choice(LIST_OF_USER_AGENTS)}
+                    book_info,a_name = scrape_book(goodreads_url, book_url_local, headers)
+                    # Check if the book's ID is already in the database or the current CSV
+                    if not search_book_id(book_info['id']) and not check_book_id(book_info['id'], current_csv):
+                        # Append the author ID to a dedicated CSV if it is not already present
+                        authorid = book_info["author_ids"]
+                        # Check if authorid is a comma-separated list
+                        if ',' in authorid:
+                            author_ids = authorid.split(',')
+                            for author in author_ids:
+                                check_and_append_aid(author.strip(), csv_file='aid1.csv')
+                            # If author name is unknown, save the first author ID in new_author_id
+                            if author_name.lower() == 'unknown':
+                                new_author_id = author_ids[0].strip()
+                        else:
+                            # If it's a single author ID, process it normally
+                            check_and_append_aid(authorid.strip(), csv_file='aid1.csv')
+                            # If author name is unknown, save the author ID in new_author_id
+                            if author_name.lower() == 'unknown':
+                                new_author_id = authorid.strip()
+                        
+                        # Log that the book scraping was successful
+                        print('Book scraped ----> ' + book_info['id'])
+
+                        
+                        dest = os.path.join('upload', a_name)
+                        if not os.path.exists(dest):
+                                os.makedirs(dest)
+                        
+                    
+                        
+                        # Move the eBook file to the specified destination and rename it
+                        new_file_path=move_and_rename_epub(epub_path, dest, book_url_local)
+                        book_info['url'] = new_file_path
+                        #print('Book file moved to ' + new_file_path)
+                        append_to_book_csv(book_info, current_csv)
+                        print('=========================> Scraping ' + bookname + ' done')
+                    else:
+                        # If the book is already added, skip processing and delete the file
+                        print(f"{book_info['title']} already added.....skipping..")
+                        os.remove(epub_path)
+                        print('book deleted')
+
+add counter for ebooks processed

@@ -1,0 +1,143 @@
+Goodreads Search Results
+==================================================
+
+SUCCESSFUL SEARCHES (18):
+------------------------------
+File: Across The Bridge - Gicheru Mwangi.epub
+Title: Across The Bridge
+Author: Gicheru Mwangi
+Goodreads URL: https://www.goodreads.com/book/show/5679963-across-the-bridge
+
+File: Calhoun - Diana Palmer.epub
+Title: Calhoun
+Author: Diana Palmer
+Goodreads URL: https://www.goodreads.com/book/show/1137812.Calhoun
+
+File: Calico Joe - John Grisham.epub
+Title: Calico Joe
+Author: John Grisham
+Goodreads URL: https://www.goodreads.com/book/show/136826368-calico-joe-by-john-grisham-3-jan-2013-paperback
+
+File: Call of the Pack - Jane Jamison.epub
+Title: Call of the Pack
+Author: Jane Jamison
+Goodreads URL: https://www.goodreads.com/book/show/29525183-call-of-the-pack
+
+File: Callaghan's Bride - Diana Palmer.epub
+Title: Callaghan's Bride
+Author: Diana Palmer
+Goodreads URL: https://www.goodreads.com/book/show/13436804-callaghan-s-bride---mempelai-callaghan
+
+File: Calling All Creeps! - R. L. Stine.epub
+Title: Calling All Creeps!
+Author: R. L. Stine
+Goodreads URL: https://www.goodreads.com/book/show/231524170-calling-all-creeps
+
+File: Calming a Demon Heart - Charlie Richards.epub
+Title: Calming a Demon Heart
+Author: Charlie Richards
+Goodreads URL: https://www.goodreads.com/book/show/20452061-calming-a-demon-heart
+
+File: Camino Island - John Grisham.epub
+Title: Camino Island
+Author: John Grisham
+Goodreads URL: https://www.goodreads.com/book/show/34121119-camino-island
+
+File: Camino Winds - John Grisham.epub
+Title: Camino Winds
+Author: John Grisham
+Goodreads URL: https://www.goodreads.com/book/show/49123131-camino-winds
+
+File: Captives_ Homeward VI - Barb Hendee.epub
+Title: Captives_ Homeward VI
+Author: Barb Hendee
+Goodreads URL: https://www.goodreads.com/book/show/18043629-captives
+
+File: Carrera's Bride - Diana Palmer.epub
+Title: Carrera's Bride
+Author: Diana Palmer
+Goodreads URL: https://www.goodreads.com/book/show/8137580-carrera-s-bride-long-tall-texans
+
+File: Casino Infernale - Simon R. Green.epub
+Title: Casino Infernale
+Author: Simon R. Green
+Goodreads URL: https://www.goodreads.com/book/show/14849327-casino-infernale
+
+File: Castle Roogna - Piers Anthony.epub
+Title: Castle Roogna
+Author: Piers Anthony
+Goodreads URL: https://www.goodreads.com/book/show/96977.Castle_Roogna
+
+File: Cat & Mouse - James Patterson.epub
+Title: Cat & Mouse
+Author: James Patterson
+Goodreads URL: https://www.goodreads.com/book/show/21436.Cat_Mouse
+
+File: Catching Her Tigers - Jane Jamison.epub
+Title: Catching Her Tigers
+Author: Jane Jamison
+Goodreads URL: https://www.goodreads.com/book/show/26035477-catching-her-tigers
+
+File: Catting Around - Charlie Richards.epub
+Title: Catting Around
+Author: Charlie Richards
+Goodreads URL: https://www.goodreads.com/book/show/20452013-catting-around
+
+File: Celebrity in Death - J. D. Robb.epub
+Title: Celebrity in Death
+Author: J. D. Robb
+Goodreads URL: https://www.goodreads.com/book/show/13007638-celebrity-in-death
+
+File: Celtic Fire - Alex Archer.epub
+Title: Celtic Fire
+Author: Alex Archer
+Goodreads URL: https://www.goodreads.com/book/show/20898478-celtic-fire
+
+
+FAILED SEARCHES (9):
+------------------------------
+File: BreakingthePlayboysCurse - Charlie Richards.epub
+Status: not_found
+Title: BreakingthePlayboysCurse
+Author: Charlie Richards
+
+File: Calliande's Tale - Jonathan Moeller.epub
+Status: not_found
+Title: Calliande's Tale
+Author: Jonathan Moeller
+
+File: Camp Half-Blood, Book One - Rick Riordan.epub
+Status: not_found
+Title: Camp Half-Blood, Book One
+Author: Rick Riordan
+
+File: Carried Away (Sinful Nights Boo - Elizabeth Lennox.epub
+Status: not_found
+Title: Carried Away (Sinful Nights Boo
+Author: Elizabeth Lennox
+
+File: Casacelli Brides_ Four powerful - Clare Connelly.epub
+Status: not_found
+Title: Casacelli Brides_ Four powerful
+Author: Clare Connelly
+
+File: Catlin's Appaloosa Kontras Mena - Charlie Richards.epub
+Status: not_found
+Title: Catlin's Appaloosa Kontras Mena
+Author: Charlie Richards
+
+File: Cattleman's Choice - Diana Palmer.epub
+Status: not_found
+Title: Cattleman's Choice
+Author: Diana Palmer
+
+File: Cattleman's Pride - Diana Palmer.epub
+Status: not_found
+Title: Cattleman's Pride
+Author: Diana Palmer
+
+File: Celine Conway the rustle of bam - Unknown.epub
+Status: not_found
+Title: Celine Conway the rustle of bam
+Author: Unknown
+
