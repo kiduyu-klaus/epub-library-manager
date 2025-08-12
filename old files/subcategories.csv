@@ -1,0 +1,26 @@
+"id","cat_id","sub_category_name","sub_category_image","status"
+"1","1","Psychology","upload/Psychology.jpg","1"
+2,1,Fiction,upload/fiction.jpg,1
+3,1,Fantasy,upload/fantasy.jpg,1
+4,1,Fanfiction,upload/fanfiction.jpg,1
+5,1,Romance,upload/romance.jpg,1
+6,1,Novella,upload/novella.jpg,1
+7,1,Manga,upload/manga.jpg,1
+8,1,Crime,upload/crime.jpg,1
+9,1,Reverse Harem,upload/reverse harem.jpg,1
+10,1,Mystery,upload/mystery.jpg,1
+11,1,Asia,upload/asia.jpg,1
+12,1,Horror,upload/horror.jpg,1
+13,1,Science Fiction,upload/science fiction.jpg,1
+14,1,Harlequin,upload/harlequin.jpg,1
+15,1,Audiobook,upload/audiobook.jpg,1
+16,1,Menage,upload/menage.jpg,1
+17,1,Contemporary,upload/contemporary.jpg,1
+18,1,Percy Jackson,upload/percy jackson.jpg,1
+19,1,Harlequin Romance,upload/harlequin romance.jpg,1
+20,1,Childrens,upload/childrens.jpg,1
+21,1,Royalty,upload/royalty.jpg,1
+22,1,Enemies To Lovers,upload/enemies to lovers.jpg,1
+23,1,Urban Fantasy,upload/urban fantasy.jpg,1
+24,1,Military Fiction,upload/military fiction.jpg,1
+25,1,New Adult,upload/new adult.jpg,1
