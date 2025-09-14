@@ -1,7 +1,352 @@
-"10","Children’s","children.png","0"
-"11","Classics","classics.png","0"
-"15","Poetry","poetry.png","0"
-"21","Philosophy","philosophy.png","0"
-"8","Historical Fiction","historical_fiction.png","0"
-"9","Young Adult","young_adult.png","0"
-"38","Chick Lit","chick_lit.png","0"
+https://drive.usercontent.google.com/download?id=11TA35-kfyjNwKDGq6SBq70ax01w3Kvng&export=download&authuser=0
+
+https://theebookhunter.com/d?=11TA35-kfyjNwKDGq6SBq70ax01w3Kvng
+
+
+
+
+[*] Scraping search page 1: https://www.ebookhunter.net/page/1/?s=Layla+Silver
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/fat-sold-mate-by-layla-silver-epub/
+    📖 Title: Fat Sold Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=11TA35-kfyjNwKDGq6SBq70ax01w3Kvng
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=11TA35-kfyjNwKDGq6SBq70ax01w3Kvng&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=11TA35-kfyjNwKDGq6SBq70ax01w3Kvng&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?0zp34f8mloooy1h1dxu7e/.epub?rlkey=iiwfyfy9wy2w32wcc0w5gy5ob&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=iiwfyfy9wy2w32wcc0w5gy5ob&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=iiwfyfy9wy2w32wcc0w5gy5ob&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/rejected-nanny-mate-by-layla-silver-epub/
+    📖 Title: Rejected Nanny Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1zNrvVi3D5-3VMuECOENYevbDQJaOReT2
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1zNrvVi3D5-3VMuECOENYevbDQJaOReT2&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1zNrvVi3D5-3VMuECOENYevbDQJaOReT2&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?qjplalfk5bycqnbckodr4/.epub?rlkey=yg7mi1xrarapkcn09q9tblu1i&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=yg7mi1xrarapkcn09q9tblu1i&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=yg7mi1xrarapkcn09q9tblu1i&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/fat-betrayed-mate-by-layla-silver-epub/
+    📖 Title: Fat Betrayed Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1dxkqNUPbrY4q5Cv-qmHNLDmr81UxB67-
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1dxkqNUPbrY4q5Cv-qmHNLDmr81UxB67-&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1dxkqNUPbrY4q5Cv-qmHNLDmr81UxB67-&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?pcl0r0mwxde2v7r8mf730/.epub?rlkey=4epqg99vsidulc2o69xyc6s9a&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=4epqg99vsidulc2o69xyc6s9a&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=4epqg99vsidulc2o69xyc6s9a&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/rejected-pregnant-mate-by-layla-silver-epub/
+    📖 Title: Rejected Pregnant Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1j4rrlkEWAKKRfvMR5RzWbeutcUqM6V9m
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1j4rrlkEWAKKRfvMR5RzWbeutcUqM6V9m&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1j4rrlkEWAKKRfvMR5RzWbeutcUqM6V9m&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?t5izslpuy3jsk6rl0lf5w/.epub?rlkey=pq94p6uwl761y01bjg6cii8fk&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=pq94p6uwl761y01bjg6cii8fk&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=pq94p6uwl761y01bjg6cii8fk&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/fat-forced-mate-by-layla-silver-epub/
+    📖 Title: Fat Forced Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1MiO9npQQWLvkDHVPEX5a-bY6CDB4DYEn
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1MiO9npQQWLvkDHVPEX5a-bY6CDB4DYEn&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1MiO9npQQWLvkDHVPEX5a-bY6CDB4DYEn&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?wlemvk708z04gixjs1d53/.epub?rlkey=5p52vzsqx9eow7i2d222ct0xt&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=5p52vzsqx9eow7i2d222ct0xt&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=5p52vzsqx9eow7i2d222ct0xt&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-alphas-forced-pregnant-mate-by-layla-silver-epub/
+    📖 Title: The Alpha’s Forced Pregnant Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1S7uWWHgE8wDkKtNiqqDaairP6f8oK8D3
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1S7uWWHgE8wDkKtNiqqDaairP6f8oK8D3&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1S7uWWHgE8wDkKtNiqqDaairP6f8oK8D3&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?efv2hztet4uhlvsk1yuun/.epub?rlkey=93ym72kydr8b0in3ageqnv8nx&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=93ym72kydr8b0in3ageqnv8nx&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=93ym72kydr8b0in3ageqnv8nx&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/rejected-bullied-mate-by-layla-silver-epub/
+    📖 Title: Rejected Bullied Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=13S3fmhE6xSEQ15ecWTyVPvc8T6upP2Gw
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=13S3fmhE6xSEQ15ecWTyVPvc8T6upP2Gw&export=download&authuser=0
+Rejected Bullied Mate_ Rejected - Layla Silver: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 417k/417k [00:00<00:00, 4.80MB/s]
+✅ Download complete: download_dir\Rejected Bullied Mate_ Rejected - Layla Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=13S3fmhE6xSEQ15ecWTyVPvc8T6upP2Gw&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?jw0r5neotafem6ehhknum/.epub?rlkey=qnrlqifakgy4opjvnp4lix5wm&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=qnrlqifakgy4opjvnp4lix5wm&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=qnrlqifakgy4opjvnp4lix5wm&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-knocked-up-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Knocked-Up Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1SAyrKZrvZEBqXs1jqYwa8-LbtIh8lcKS
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1SAyrKZrvZEBqXs1jqYwa8-LbtIh8lcKS&export=download&authuser=0
+Betrayed Knocked-Up Mate_ Rejec - Layla Silver: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 422k/422k [00:00<00:00, 800kB/s]
+✅ Download complete: download_dir\Betrayed Knocked-Up Mate_ Rejec - Layla Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1SAyrKZrvZEBqXs1jqYwa8-LbtIh8lcKS&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?i7ebdv6tlzs1tvtwehrb9/.epub?rlkey=c4w8ehoqxut5di707e8qtuzyo&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=c4w8ehoqxut5di707e8qtuzyo&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=c4w8ehoqxut5di707e8qtuzyo&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-alphas-forced-plus-size-mate-by-layla-silver-epub/
+    📖 Title: The Alpha’s Forced Plus-Size Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1SHZe9rmblGnHeh8VWkLUUVtNVVtxSs0e
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1SHZe9rmblGnHeh8VWkLUUVtNVVtxSs0e&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1SHZe9rmblGnHeh8VWkLUUVtNVVtxSs0e&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?z9nzs4ysiaez601pnxr23/.epub?rlkey=ia5srmh1zc33vl6ev4vdufemq&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=ia5srmh1zc33vl6ev4vdufemq&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=ia5srmh1zc33vl6ev4vdufemq&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-arranged-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Arranged Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1uQ7SkQ37l2N9R-uWFGiI1IQgT_Xbtnr7
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1uQ7SkQ37l2N9R-uWFGiI1IQgT_Xbtnr7&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1uQ7SkQ37l2N9R-uWFGiI1IQgT_Xbtnr7&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?lr5yc63ocg1es4n1f5jmc/.epub?rlkey=ky4ozkiu6hon1hkeeynu3vgcr&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=ky4ozkiu6hon1hkeeynu3vgcr&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=ky4ozkiu6hon1hkeeynu3vgcr&export=download&authuser=0
+
+[*] Scraping search page 2: https://www.ebookhunter.net/page/2/?s=Layla+Silver
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-plus-size-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Plus-Size Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1FmgEX84aMZxLCxp4QkBmUDaKJT8Nbtk_
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1FmgEX84aMZxLCxp4QkBmUDaKJT8Nbtk_&export=download&authuser=0
+Betrayed_Plus-Size_Mate__Reject_-_Layla_Silver: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.11M/3.11M [00:02<00:00, 1.18MB/s]
+✅ Download complete: download_dir\Betrayed_Plus-Size_Mate__Reject_-_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1FmgEX84aMZxLCxp4QkBmUDaKJT8Nbtk_&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?qe8z1swawn64vljzwl6ji/.epub?rlkey=t32keb8ihzhm0otuyv37ulupj&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=t32keb8ihzhm0otuyv37ulupj&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=t32keb8ihzhm0otuyv37ulupj&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-auctioned-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Auctioned Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1qIyTDTkEdzchZuNHAJPjv-mS3FPdTr6N
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1qIyTDTkEdzchZuNHAJPjv-mS3FPdTr6N&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1qIyTDTkEdzchZuNHAJPjv-mS3FPdTr6N&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?dka5flqia8mbk9pyhwss1/.epub?rlkey=7cvs4g39h3fa3zdueke3bm0og&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=7cvs4g39h3fa3zdueke3bm0og&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=7cvs4g39h3fa3zdueke3bm0og&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-alphas-forced-rejected-mate-by-layla-silver-epub/
+    📖 Title: The Alpha’s Forced Rejected Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1nPfnoikwDN4UOxo1zNfAUGe82fWLLyKT
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1nPfnoikwDN4UOxo1zNfAUGe82fWLLyKT&export=download&authuser=0
+The_Alpha__x27_s_Forced_Rejected_Mat_-_Layla_Silver: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.97M/2.97M [00:01<00:00, 2.39MB/s]
+✅ Download complete: download_dir\The_Alpha__x27_s_Forced_Rejected_Mat_-_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1nPfnoikwDN4UOxo1zNfAUGe82fWLLyKT&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?zfhtzhfc3xe9sivvt6kut/.epub?rlkey=qvjhhhgn2r3el8qgoh5mqbm4d&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=qvjhhhgn2r3el8qgoh5mqbm4d&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=qvjhhhgn2r3el8qgoh5mqbm4d&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-alphas-forced-bullied-mate-by-layla-silver-epub/
+    📖 Title: The Alpha’s Forced Bullied Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1YRnY-xbiozs_3-f98rsSS8Jix1HAaVa-
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1YRnY-xbiozs_3-f98rsSS8Jix1HAaVa-&export=download&authuser=0
+The_Alpha__x27_s_Forced_Bullied_Mate_-_Layla_Silver: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.01M/3.01M [00:01<00:00, 2.66MB/s]
+✅ Download complete: download_dir\The_Alpha__x27_s_Forced_Bullied_Mate_-_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1YRnY-xbiozs_3-f98rsSS8Jix1HAaVa-&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?3da0u91x8vggwuvc2wagl/.epub?rlkey=umr3qbg4qtwr4k2hqsuyhpzfh&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=umr3qbg4qtwr4k2hqsuyhpzfh&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=umr3qbg4qtwr4k2hqsuyhpzfh&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-forced-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Forced Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1tc4m7TL1nMtprwSn9-2BmW-ZiagYQ9ww
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1tc4m7TL1nMtprwSn9-2BmW-ZiagYQ9ww&export=download&authuser=0
+Betrayed_Forced_Mate__Rejected_-_Layla_Silver: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.36M/3.36M [00:01<00:00, 1.86MB/s]
+✅ Download complete: download_dir\Betrayed_Forced_Mate__Rejected_-_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1tc4m7TL1nMtprwSn9-2BmW-ZiagYQ9ww&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?ht8ijdzxtv1xna1ujhkk1/.epub?rlkey=ssapnrlmffsow1hxdt5dvtck1&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=ssapnrlmffsow1hxdt5dvtck1&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=ssapnrlmffsow1hxdt5dvtck1&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-pregnant-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Pregnant Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1AjW9NXpSJBAfnqRCdtp7nmBVksJMMewo
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1AjW9NXpSJBAfnqRCdtp7nmBVksJMMewo&export=download&authuser=0
+Betrayed+Pregnant+Mate_+Rejecte+-+Layla+Silver: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.16M/3.16M [00:00<00:00, 3.38MB/s]
+✅ Download complete: download_dir\Betrayed+Pregnant+Mate_+Rejecte+-+Layla+Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1AjW9NXpSJBAfnqRCdtp7nmBVksJMMewo&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?m0y7r9v2k5a839zoqhub3/.epub?rlkey=zg9gyx69n41zb79qofgkhp745&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=zg9gyx69n41zb79qofgkhp745&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=zg9gyx69n41zb79qofgkhp745&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-kidnapped-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Kidnapped Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1vhJn7pBED2nnYRIO0RyiQD2EiUqDX9wy
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1vhJn7pBED2nnYRIO0RyiQD2EiUqDX9wy&export=download&authuser=0
+Betrayed+Kidnapped+Mate_+Reject+-+Layla+Silver: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 3.37M/3.37M [00:00<00:00, 3.91MB/s]
+✅ Download complete: download_dir\Betrayed+Kidnapped+Mate_+Reject+-+Layla+Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1vhJn7pBED2nnYRIO0RyiQD2EiUqDX9wy&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?1ax3kk6v1ibaaawi25wet/.epub?rlkey=h6d28irlvk4wdha394pe33obt&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=h6d28irlvk4wdha394pe33obt&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=h6d28irlvk4wdha394pe33obt&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/betrayed-bullied-mate-by-layla-silver-epub/
+    📖 Title: Betrayed Bullied Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1EYgCQiAQD9JiKvSuhhfU9u19LJurvEWS
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1EYgCQiAQD9JiKvSuhhfU9u19LJurvEWS&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1EYgCQiAQD9JiKvSuhhfU9u19LJurvEWS&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?5yciu4z7tic14btnr8uo9/.epub?rlkey=rysx4u141oe1lbddjx41xsbc3&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=rysx4u141oe1lbddjx41xsbc3&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=rysx4u141oe1lbddjx41xsbc3&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-alphas-forced-bride-by-layla-silver-epub/
+    📖 Title: The Alpha’s Forced Bride by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=14Ealbjb-XH12fyEncDoWiABMtXDdCwAZ
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=14Ealbjb-XH12fyEncDoWiABMtXDdCwAZ&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=14Ealbjb-XH12fyEncDoWiABMtXDdCwAZ&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?vhkqe6jbdzwby7m71iayu/.epub?rlkey=otsb5wdq6qbosswgahuan2uhb&&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=otsb5wdq6qbosswgahuan2uhb&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=otsb5wdq6qbosswgahuan2uhb&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/daddys-friends-mate-by-layla-silver-epub/
+    📖 Title: Daddy’s Friend’s Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=10Pk1fIG5mDugg4WQwLUKQyMCDL4yGrdy
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=10Pk1fIG5mDugg4WQwLUKQyMCDL4yGrdy&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=10Pk1fIG5mDugg4WQwLUKQyMCDL4yGrdy&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?02ye72j5dejpqv21y3tl3/.epub?rlkey=jc8aylhkvlu9tsb1g2a3k25hw&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=jc8aylhkvlu9tsb1g2a3k25hw&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=jc8aylhkvlu9tsb1g2a3k25hw&export=download&authuser=0
+
+[*] Scraping search page 3: https://www.ebookhunter.net/page/3/?s=Layla+Silver
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-wolfs-surrogate-by-layla-silver-epub/
+    📖 Title: The Wolf’s Surrogate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1QewFnw_3rAxwX2jVYtsw2gcHuClBwYlu
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1QewFnw_3rAxwX2jVYtsw2gcHuClBwYlu&export=download&authuser=0
+The_Wolf__x27_s_Surrogate__Wolf_Shif_-_Layla_Silver: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2.72M/2.72M [00:01<00:00, 1.47MB/s]
+✅ Download complete: download_dir\The_Wolf__x27_s_Surrogate__Wolf_Shif_-_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1QewFnw_3rAxwX2jVYtsw2gcHuClBwYlu&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?eurn2jex2q3rel2pdxac1/.epub?rlkey=zj7knrvjj6a4bw6spacw17lcg&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=zj7knrvjj6a4bw6spacw17lcg&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=zj7knrvjj6a4bw6spacw17lcg&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-wolfs-kidnapped-mate-by-layla-silver-epub/
+    📖 Title: The Wolf’s Kidnapped Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1WquIXjnvqr2zJplYq_9bArL6GLMRjJRV
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1WquIXjnvqr2zJplYq_9bArL6GLMRjJRV&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1WquIXjnvqr2zJplYq_9bArL6GLMRjJRV&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?6mdrkgotqwufyihr67gwm/.epub?rlkey=fylxuuvagaxi37jcp922w0k48&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=fylxuuvagaxi37jcp922w0k48&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=fylxuuvagaxi37jcp922w0k48&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/obsessed-mate-by-layla-silver-epub/
+    📖 Title: Obsessed Mate by Layla Silver – eBooks Download
+    ✍️ Author: Layla Silver – eBooks Download
+    🔗 Found link: https://theebookhunter.com/d?=1X588nTpk2QIK13tUnnMaaCcJKnO8vz35
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1X588nTpk2QIK13tUnnMaaCcJKnO8vz35&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1X588nTpk2QIK13tUnnMaaCcJKnO8vz35&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?ryzwr8y3gsphmwq98dp68/.epub?rlkey=qf7iu2zblp2sb7kmbxjsf9r56&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=qf7iu2zblp2sb7kmbxjsf9r56&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=qf7iu2zblp2sb7kmbxjsf9r56&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/bullied-mate-by-layla-silver-epub/
+    📖 Title: Bullied Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1oNyTqLnuHWZKgAMaY8QBYYFkr_e92d6D
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1oNyTqLnuHWZKgAMaY8QBYYFkr_e92d6D&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1oNyTqLnuHWZKgAMaY8QBYYFkr_e92d6D&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?o0oerzzyq1t400xlnn4r0/.epub?rlkey=zl0z1dft78oz3stwto7dncyqb&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=zl0z1dft78oz3stwto7dncyqb&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=zl0z1dft78oz3stwto7dncyqb&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/auctioned-mate-by-layla-silver-epub/
+    📖 Title: Auctioned Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1bCn6hQ-HfdvdvCQqHn3rwpC1jHOS0SKN
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1bCn6hQ-HfdvdvCQqHn3rwpC1jHOS0SKN&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1bCn6hQ-HfdvdvCQqHn3rwpC1jHOS0SKN&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/dp?tpz8r0ti307ov7qoadn8e/.epub?rlkey=fba55l42fi67gfskinxjvfddu&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=fba55l42fi67gfskinxjvfddu&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=fba55l42fi67gfskinxjvfddu&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-wolfs-secret-twins-by-layla-silver-epub/
+    📖 Title: The Wolf’s Secret Twins by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1_lBHcvVJdop9fK2ZlIjjHlJoPdz1WBp5
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1_lBHcvVJdop9fK2ZlIjjHlJoPdz1WBp5&export=download&authuser=0
+The_Wolf__x27_s_Secret_Twins__Forbid_-_Layla_Silver: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 377k/377k [00:00<00:00, 737kB/s]
+✅ Download complete: download_dir\The_Wolf__x27_s_Secret_Twins__Forbid_-_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1_lBHcvVJdop9fK2ZlIjjHlJoPdz1WBp5&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?q2vg350xz9xilqenlxpoc/.epub?rlkey=2q51ud412zrnvdnl9r3wurv5r&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=2q51ud412zrnvdnl9r3wurv5r&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=2q51ud412zrnvdnl9r3wurv5r&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/wolf-inn-complete-series-by-layla-silver-epub/
+    📖 Title: Wolf Inn Complete Series by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1ethS3eMkBkufxRUGYRowT2PdE03_Uj1V
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1ethS3eMkBkufxRUGYRowT2PdE03_Uj1V&export=download&authuser=0
+Wolf_Inn_Complete_Series_by_Layla_Silver: 100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 1.06M/1.06M [00:02<00:00, 544kB/s]
+✅ Download complete: download_dir\Wolf_Inn_Complete_Series_by_Layla_Silver.epub
+    🔗 Found link: https://drive.usercontent.google.com/download?id=1ethS3eMkBkufxRUGYRowT2PdE03_Uj1V&export=download&authuser=0
+Link is valid!
+    🔗 Found link: https://theebookhunter.com/dp?ik36o0ym4nzc6gj6klftm/.epub?rlkey=nsvf05oh0bg4ckl72ejytcbx5&dl=1
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=nsvf05oh0bg4ckl72ejytcbx5&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=nsvf05oh0bg4ckl72ejytcbx5&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-wolfs-auctioned-mate-by-layla-silver-epub/
+    📖 Title: The Wolf’s Auctioned Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://theebookhunter.com/d?=1i63M4DRwN5EFAwdbbO4VMKqA4gAuuJs2
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=1i63M4DRwN5EFAwdbbO4VMKqA4gAuuJs2&export=download&authuser=0
+❌ Download failed: 500 Server Error: Internal Server Error for url: https://drive.usercontent.google.com/download?id=1i63M4DRwN5EFAwdbbO4VMKqA4gAuuJs2&export=download&authuser=0
+    🔗 Found link: https://epubdl.xyz/db?=pbpoidtz2zcpg7y/.epub
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=pbpoidtz2zcpg7y/.epub&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=pbpoidtz2zcpg7y/.epub&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/daddys-innocent-mate-by-layla-silver-epub/
+    📖 Title: Daddy’s Innocent Mate by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://epubdl.xyz/db?=sse9r4kv0ungvau/.epub
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=sse9r4kv0ungvau/.epub&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=sse9r4kv0ungvau/.epub&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/b?=yu4eqcm0gk1py5fpqcbrov9mznpt01u3
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=yu4eqcm0gk1py5fpqcbrov9mznpt01u3&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=yu4eqcm0gk1py5fpqcbrov9mznpt01u3&export=download&authuser=0
+    ✍️ Author: Layla Silver
+    [+] Fetching book details: https://www.ebookhunter.net/the-alphas-pregnant-bride-by-layla-silver-epub/
+    📖 Title: The Alpha’s Pregnant Bride by Layla Silver
+    ✍️ Author: Layla Silver
+    🔗 Found link: https://epubdl.xyz/db?=iecmrz5q7dg1g6r/.epub
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=iecmrz5q7dg1g6r/.epub&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=iecmrz5q7dg1g6r/.epub&export=download&authuser=0
+    🔗 Found link: https://theebookhunter.com/b?=ib8mypdtvkfktmserduv45vkxwi53c0e
+    🔗 Converted to final link: https://drive.usercontent.google.com/download?id=ib8mypdtvkfktmserduv45vkxwi53c0e&export=download&authuser=0
+❌ Download failed: 404 Client Error: Not Found for url: https://drive.usercontent.google.com/download?id=ib8mypdtvkfktmserduv45vkxwi53c0e&export=download&authuser=0
+
+C:\cracks\My_App\epub-library-manager>
+
+
+
+
+when you encounter a link like https://theebookhunter.com/dp?lr5yc63ocg1es4n1f5jmc/.epub?rlkey=ky4ozkiu6hon1hkeeynu3vgcr&dl=1
