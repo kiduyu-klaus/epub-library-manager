@@ -2246,3 +2246,1024 @@ print(f"🔄 Already in database (deleted): {already_added_books}")
 print(f"⚠️  Skipped due to missing info: {skipped_books}")
 print(f"📈 Success rate: {(processed_books/total_epub_files*100):.1f}%" if total_epub_files > 0 else "📈 Success rate: 0%")
 print("=" * 60)
+
+import csv
+import ast
+import os
+
+def load_combined_map(file_path="combined_map.txt"):
+    """Load combined_map dictionary from file."""
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read().strip()
+        combined_map = ast.literal_eval(content)
+    return combined_map
+
+
+def load_categories(csv_file="categories_filtered.csv"):
+    """Load categories.csv into a dictionary {category_name.lower(): id}"""
+    categories = {}
+    with open(csv_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            categories[row["category_name"].strip().lower()] = int(row["id"])
+    return categories
+
+
+def save_subcategories_from_combined_map(
+    combined_map_file="combined_map.txt",
+    categories_file="categories_filtered.csv",
+    output_file="sub_cat_final.csv"
+):
+    combined_map = load_combined_map(combined_map_file)
+    categories = load_categories(categories_file)
+
+    file_exists = os.path.isfile(output_file)
+
+    # Get last id if file already exists
+    start_id = 1
+    if file_exists:
+        with open(output_file, newline="", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            ids = [int(row["id"]) for row in reader if row["id"].isdigit()]
+            if ids:
+                start_id = max(ids) + 1
+
+    with open(output_file, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+
+        if not file_exists:
+            writer.writerow(
+                ["id", "cat_id", "sub_category_name", "sub_category_image", "status"]
+            )
+
+        for idx, ((main, sub), sub_category_name) in enumerate(combined_map.items(), start=start_id):
+            main = main.strip().lower()
+            if main not in categories:
+                print(f"⚠️ Category '{main}' not found in {categories_file}, skipping...")
+                continue
+
+            cat_id = categories[main]
+
+            sub_category_image = sub_category_name.lower().replace(" ", "_") + ".png"
+
+            writer.writerow([idx, cat_id, sub_category_name, sub_category_image, "0"])
+            print(f"✅ Added: {sub_category_name} under cat_id={cat_id}")
+
+    print(f"\n🎉 Finished writing subcategories to {output_file}")
+
+
+# Example usage
+if __name__ == "__main__":
+    save_subcategories_from_combined_map()
+
+
+import os
+import xml.etree.ElementTree as ET
+from collections import Counter
+
+
+
+def extract_subjects(base_path=r"D:\Novels Library\download_five_each_author"):
+    """
+    Recursively search for metadata.opf files and extract <dc:subject> values.
+    Prints genres after each file is read, and counts cat_id/sub_id usage.
+    """
+    subjects_map = {}
+    all_subjects = set()
+    pair_counter = Counter()  # 🔑 Counter for (cat_id, sub_id)
+
+    for root, dirs, files in os.walk(base_path):
+        if "metadata.opf" in files:
+            file_path = os.path.join(root, "metadata.opf")
+            try:
+                tree = ET.parse(file_path)
+                root_xml = tree.getroot()
+
+                ns = {"dc": "http://purl.org/dc/elements/1.1/"}
+                subjects = [s.text.strip() for s in root_xml.findall(".//dc:subject", ns) if s.text]
+
+                if subjects:
+                    subjects_map[file_path] = subjects
+                    all_subjects.update(subjects)
+
+                    # 🔑 Pass single genre string if only one subject
+                    if len(subjects) == 1:
+                        print(f"   ⚠️ Only one genre found, skipping category assignment.")
+                        print(f"     Genre: {subjects}")
+                        continue
+                    else:
+                        print(f"   ✅ Found {len(subjects)} genres.")
+                        print(f"     Genres: {subjects}")
+                        cat_id, sub_id = find_sub_category(subjects)
+                        print(f" ==================================================    Mapped to: Category ID {cat_id}, Subcategory ID {sub_id}")
+
+                    # Update counter
+                    pair_counter[(cat_id, sub_id)] += 1
+
+
+            except Exception as e:
+                print(f"❌ Failed to parse {file_path}: {e}")
+
+    # Final summary
+    # Final summary
+    print("\n📌 Final Category → Subcategory counts:")
+    for (cat_id, sub_id), count in pair_counter.most_common():
+        cursor.execute("""
+            SELECT c.category_name, s.sub_category_name
+            FROM sub_categories s
+            JOIN categories c ON s.cat_id = c.id
+            WHERE s.id = %s
+        """, (sub_id,))
+        row = cursor.fetchone()
+        if row:
+            print(f"   {row['category_name']} → {row['sub_category_name']} : {count} times")
+        else:
+            print(f"   (cat_id={cat_id}, sub_id={sub_id}) : {count} times")
+
+    cursor.close()
+    conn.close()
+
+    return subjects_map, sorted(all_subjects), pair_counter
+
+base_r = r"D:\Novels Library\download_five_each_author\Kara Lennox"
+_, final_genres, _ = extract_subjects()
+
+import ast
+
+def load_combined_map(file_path="combined_map.txt"):
+    """
+    Load combined_map dictionary from file.
+    Returns an empty dict if file does not exist or is invalid.
+    """
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+            if not content:
+                return {}
+            return ast.literal_eval(content)  # safely convert str -> dict
+    except FileNotFoundError:
+        print(f"⚠️ {file_path} not found, returning empty dict.")
+        return {}
+    except Exception as e:
+        print(f"⚠️ Error reading {file_path}: {e}")
+        return {}
+
+# Example usage
+combined_map = load_combined_map("combined_map.txt")
+print("Loaded combined_map:")
+for k, v in combined_map.items():
+    print(f"{k} -> {v}")
+    
+
+save_subcategories(combined_map, cat_id=5)
+
+combined_map33 = {
+    ("young adult", "contemporary"): "Young Adult Contemporary",
+    ("young adult", "fantasy"): "Young Adult Fantasy",
+    ("young adult", "historical fiction"): "Young Adult Historical Fiction",
+    ("young adult", "horror"): "Young Adult Horror",
+    ("young adult", "mystery"): "Young Adult Mystery",
+    ("young adult", "paranormal"): "Young Adult Paranormal",
+    ("young adult", "romance"): "Young Adult Romance",
+    ("young adult", "science fiction"): "Young Adult Science Fiction"
+}
+
+save_combined_map(combined_map33, file_path=combined_map_file)
+save_subcategories(combined_map33, 9,
+                               output_file=sub_cat_file)
+category_name = "horror"
+cat_id = 7
+combined_map_file = "combined_map.txt"
+sub_cat_file = "sub_cat.csv"
+
+
+print(f"\n🔍 Processing category: {category_name} (id={cat_id})")
+
+# Build combined map for this category
+combined_map = build_genre_combined_map(category_name)
+
+if not combined_map:
+    print(f"⚠️ No subcategories found for {category_name}")
+    
+
+import os
+import ast
+import pprint
+
+def search_genre_by_last_subcategory(search_term, csv_file="all_list_genres.csv", ignore=1):
+    """
+    Search all_list_genres.csv for entries where the last subcategory matches search_term.
+    
+    - If search_term is a single word: match only the last part.
+    - If search_term has multiple words: replace spaces with dashes and match the last N parts.
+    
+    Args:
+        search_term (str): The genre keyword to match.
+        csv_file (str): Path to the CSV file.
+        ignore (int, optional): Maximum allowed number of '-' in entry.
+                                If exceeded, the entry is skipped.
+
+    Returns:
+        list: Matching genre entries.
+    """
+    search_term = search_term.strip().lower()
+    search_parts = search_term.split()
+    matches = []
+
+    with open(csv_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            genre = row["Genre"].strip()
+            if not genre:
+                continue
+
+            # Skip if ignore threshold exceeded
+            if ignore is not None and genre.count("-") > ignore:
+                continue
+
+            parts = genre.lower().split("-")
+
+            # Single-word search → last part only
+            if len(search_parts) == 1:
+                if parts[-1] == search_term:
+                    matches.append(genre)
+
+            # Multi-word search → check last N parts
+            else:
+                if parts[-len(search_parts):] == search_parts:
+                    matches.append(genre)
+
+    return matches
+
+
+
+def build_genre_combined_map(search_term, csv_file="all_list_genres.csv", ignore=None):
+    """
+    Build a mapping of combined categories based on entries ending with search_term.
+    Handles both single and multi-word search terms.
+
+    Example:
+        - search_term="romance"
+          "billionaire-romance" -> ("romance", "billionaire"): "Billionaire Romance"
+
+        - search_term="science fiction"
+          "dystopian-science-fiction" -> ("science fiction", "dystopian"): "Dystopian Science Fiction"
+    """
+    search_term = search_term.strip().lower()
+    search_parts = search_term.split()
+
+    # Force ignore = number of words in search_term
+    ignore = len(search_parts)
+
+    results = search_genre_by_last_subcategory(search_term, csv_file, ignore)
+    combined_map = {}
+
+    for r in results:
+        parts = r.lower().split("-")
+
+        if len(search_parts) == 1:
+            # Single-word case
+            if len(parts) > 1 and parts[-1] == search_parts[0]:
+                prefix = " ".join(parts[:-1])
+                key = (search_term, prefix)
+                label = f"{prefix.title()} {search_term.title()}"
+                combined_map[key] = label
+
+        else:
+            # Multi-word case, e.g. "science fiction"
+            last_n = "-".join(parts[-len(search_parts):])
+            if last_n == "-".join(search_parts):
+                prefix = " ".join(parts[:-len(search_parts)])
+                key = (search_term, prefix)
+                label = f"{prefix.title()} {search_term.title()}"
+                combined_map[key] = label
+
+    return combined_map
+
+
+
+
+
+def save_combined_map(combined_map, file_path="combined_map.txt"):
+    """
+    Save combined_map into a single dictionary in file_path.
+    If file exists, merge with existing dictionary instead of appending.
+    Each key/value pair is written on a new line for readability.
+    """
+    existing_map = {}
+
+    # Load existing dictionary if file exists
+    if os.path.isfile(file_path):
+        with open(file_path, "r", encoding="utf-8") as f:
+            content = f.read().strip()
+            if content:
+                try:
+                    existing_map = ast.literal_eval(content)
+                except Exception:
+                    print("⚠️ Warning: existing file not valid dictionary, overwriting.")
+
+    # Merge new entries
+    existing_map.update(combined_map)
+
+    # Write back as one big dictionary, formatted line by line
+    with open(file_path, "w", encoding="utf-8") as f:
+        pprint.pprint(existing_map, stream=f, sort_dicts=False, width=120)
+
+    print(f"✅ Saved {len(combined_map)} new entries, total {len(existing_map)} in {file_path}")
+
+
+def save_subcategories(combined_map, cat_id, output_file="sub_cat.csv"):
+    """
+    Save combined_map entries into sub_cat.csv with schema:
+    "id","cat_id","sub_category_name","sub_category_image","status"
+
+    - Appends if file exists
+    - Auto-increments id based on last row
+    """
+    file_exists = os.path.isfile(output_file)
+
+    # Determine starting id
+    start_id = 1
+    if file_exists:
+        with open(output_file, "r", encoding="utf-8") as f:
+            reader = csv.DictReader(f)
+            ids = [int(row["id"])
+                   for row in reader if row.get("id") and row["id"].isdigit()]
+            if ids:
+                start_id = max(ids) + 1
+
+    with open(output_file, "a", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+
+        # Write header only if file is new
+        if not file_exists:
+            writer.writerow(["id", "cat_id", "sub_category_name",
+                            "sub_category_image", "status"])
+
+        for idx, (key, sub_category_name) in enumerate(combined_map.items(), start=start_id):
+            # Create image filename
+            sub_category_image = sub_category_name.lower().replace(" ", "_") + ".png"
+            writer.writerow(
+                [idx, cat_id, sub_category_name, sub_category_image, "0"])
+
+    print(f"✅ Appended {len(combined_map)} subcategories to {output_file}")
+    
+    
+
+
+def process_genre_categories(categories_file="categories.csv",
+                       genres_file="all_list_genres.csv",
+                       combined_map_file="combined_map.txt",
+                       sub_cat_file="sub_cat.csv",
+                       ignore=None):
+    """
+    Loop through categories.csv and:
+    - search_genre_by_last_subcategory using category_name
+    - build_combined_map
+    - save_combined_map
+    - save_subcategories
+
+    Args:
+        categories_file (str): Path to categories.csv
+        genres_file (str): Path to all_list_genres.csv
+        combined_map_file (str): Output for combined_map.txt
+        sub_cat_file (str): Output for sub_cat.csv
+        ignore (int, optional): Max allowed '-' in genre entries
+    """
+    if not os.path.isfile(categories_file):
+        print(f"❌ {categories_file} not found")
+        return
+
+    with open(categories_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            cat_id = row["id"].strip()
+            category_name = row["category_name"].strip().lower()
+
+            print(f"\n🔍 Processing category: {category_name} (id={cat_id})")
+
+            # Build combined map for this category
+            combined_map = build_genre_combined_map(category_name)
+
+            if not combined_map:
+                print(f"⚠️ No subcategories found for {category_name}")
+                continue
+
+            # Save combined_map.txt
+            save_combined_map(combined_map, file_path=combined_map_file)
+
+            # Save sub_cat.csv
+            save_subcategories(combined_map, cat_id,
+                               output_file=sub_cat_file)
+
+process_genre_categories(
+    categories_file="categories.csv",
+    genres_file="all_list_genres.csv",
+    combined_map_file="combined_map.txt",
+    sub_cat_file="sub_cat.csv",
+    ignore=1  # skip entries with more than 1 dash
+)
+
+import requests
+from bs4 import BeautifulSoup
+import csv
+import os
+
+BASE_URL = "https://www.goodreads.com"
+START_URL = "https://www.goodreads.com/genres/list?utf8=%E2%9C%93&filter=top-level"
+CSV_FILE = "all_list_genres_top_level.csv"
+
+
+def get_list_max_pages(soup):
+    """
+    Extract the maximum number of pages from pagination element.
+    Looks for pagination in leftContainer div and finds the highest page number.
+    Returns max page number as int, or 1 if no pagination found.
+    """
+    try:
+        # Find the leftContainer div
+        left_container = soup.find("div", class_="leftContainer")
+        if not left_container:
+            print("[!] Could not find leftContainer div")
+            return 1
+
+        # Find the pagination div (has no attributes)
+        pagination_div = None
+        for div in left_container.find_all("div", recursive=False):
+            if not div.attrs:  # no attributes
+                pagination_div = div
+                break
+
+        if not pagination_div:
+            print("[!] Could not find pagination div without attributes")
+            return 1
+
+        max_page = 1
+
+        # Check current page (em tag with class "current")
+        current_page_elem = pagination_div.find("em", class_="current")
+        if current_page_elem:
+            try:
+                current_page = int(current_page_elem.get_text(strip=True))
+                max_page = max(max_page, current_page)
+            except ValueError:
+                pass
+
+        # Check all page links (a tags with href containing "page=")
+        page_links = pagination_div.find_all("a", href=True)
+        for link in page_links:
+            href = link.get("href", "")
+            if "page=" in href:
+                try:
+                    # Extract page number from URL
+                    page_param = href.split("page=")[1]
+                    page_num_str = page_param.split("&")[0].split("#")[0]
+                    page_num = int(page_num_str)
+                    max_page = max(max_page, page_num)
+                except (ValueError, IndexError):
+                    continue
+
+        print(f"[+] Found max page: {max_page}")
+        return max_page
+
+    except Exception as e:
+        print(f"[!] Error extracting max pages: {e}")
+        return 1
+
+
+def scrape_goodreads_list(start_url, output_file, max_pages=None):
+    """
+    Scrapes a paginated Goodreads genre/list page and saves results to CSV.
+
+    Args:
+        start_url (str): The starting URL (page 1).
+        max_pages (int, optional): Limit number of pages to scrape (for testing).
+        output_file (str): CSV file to save results.
+
+    Returns:
+        list of dict: Extracted results from all pages.
+    """
+    results = []
+    url = start_url
+    page = 1
+
+    while url:
+        print(f"📖 Scraping page {page}: {url}")
+        response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
+        if response.status_code != 200:
+            print(f"❌ Failed to fetch {url} (status {response.status_code})")
+            break
+
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        # --- Extract all genre links ---
+        for link in soup.select("a[href*='/genres/']"):
+            name = link.get_text(strip=True)
+            href = BASE_URL + link["href"]
+            results.append({"Genre": name, "URL": href})
+
+        # --- Handle pagination ---
+        left_container = soup.find("div", class_="leftContainer")
+        if not left_container:
+            print("⚠️ No leftContainer found.")
+            break
+
+        # Pagination <div> inside leftContainer has NO attributes
+        pagination_div = None
+        for div in left_container.find_all("div", recursive=False):
+            if not div.attrs:  # no attributes at all
+                pagination_div = div
+                break
+
+        if pagination_div:
+            next_tag = pagination_div.find("a", class_="next_page")
+            if next_tag and "href" in next_tag.attrs:
+                next_page = BASE_URL + next_tag["href"]
+                url = next_page
+                page += 1
+            else:
+                print("✅ No next page found.")
+                break
+        else:
+            print("⚠️ Pagination div not found.")
+            break
+
+        if max_pages and page > max_pages:
+            print(f"⏹️ Reached max_pages={max_pages}, stopping.")
+            break
+
+    # --- Save to CSV ---
+    file_exists = os.path.isfile(output_file)
+    with open(output_file, "a", newline="", encoding="utf-8") as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=["Genre", "URL"])
+        if not file_exists:  # Write header only if file is new
+            writer.writeheader()
+        writer.writerows(results)
+
+    print(f"✅ Saved {len(results)} genres to {output_file}")
+    return results
+
+
+scrape_goodreads_list(START_URL, output_file=CSV_FILE)
+
+import requests
+
+OX_API_USER = 'king_klau'
+OX_API_PASS = 'kiduyuKLAUS1995='
+OX_API_URL = 'https://realtime.oxylabs.io/v1/queries'
+
+
+def oxylabs_search(query, limit=5):
+    """Perform search via Oxylabs Realtime API and return list of URLs."""
+    try:
+        payload = {
+            'source': 'google_search',
+            'query': query,
+            'domain': 'com',
+            'locale': 'en-us',
+            'parse': True,
+            'start_page': 1,
+            'pages': 1,
+            'limit': limit
+        }
+
+        response = requests.post(OX_API_URL, auth=(
+            OX_API_USER, OX_API_PASS), json=payload)
+        if response.status_code != 200:
+            print(f"Oxylabs API Error: {response.json()}")
+            return []
+
+        data = response.json()
+        urls = []
+        if 'results' in data and len(data['results']) > 0:
+            content = data['results'][0].get('content', {})
+            results = content.get('results', {})
+            organic_results = results.get('organic', [])
+            for result in organic_results:
+                url = result.get('url')
+                if url:
+                    urls.append(url)
+        return urls
+
+    except Exception as e:
+        print(f"Oxylabs search error: {e}")
+        return []
+
+
+def author_youtube_search(author_name):
+    query = f"{author_name} channel youtube"
+    results = oxylabs_search(query)
+    fallback = None
+    for url in results:
+        if "youtube.com" in url:
+            clean = url.split("?")[0].split("#")[0].rstrip("/")
+            parts = clean.split("/")
+            if len(parts) == 4:
+                return clean + "/"
+            if not fallback:
+                fallback = clean + "/"
+    return fallback or ""
+
+
+def author_instagram_search(author_name):
+    query = f"{author_name} instagram official"
+    results = oxylabs_search(query)
+    fallback = None
+    for url in results:
+        if "instagram.com" in url:
+            clean = url.split("?")[0].split("#")[0].rstrip("/")
+            parts = clean.split("/")
+            if len(parts) == 4:
+                return clean + "/"
+            if not fallback:
+                fallback = clean + "/"
+    return fallback or ""
+
+
+def author_facebook_search(author_name):
+    query = f"{author_name} facebook official"
+    results = oxylabs_search(query)
+    fallback = None
+    for url in results:
+        if "facebook.com" in url:
+            clean = url.split("?")[0].split("#")[0].rstrip("/")
+            parts = clean.split("/")
+            if len(parts) == 4:
+                return clean + "/"
+            if not fallback:
+                fallback = clean + "/"
+    return fallback or ""
+
+
+def author_website_search(author_name):
+    query = f"{author_name} official website"
+    results = oxylabs_search(query)
+    if results:
+        return results[0]
+    return ""
+
+
+# ==== Example usage ====
+if __name__ == "__main__":
+    author = "Lee Child"
+    print("YouTube:", author_youtube_search(author))
+    print("Instagram:", author_instagram_search(author))
+    print("Facebook:", author_facebook_search(author))
+    print("Website:", author_website_search(author))
+
+
+import mysql.connector
+
+# ==== MySQL Connection (XAMPP) ====
+conn = mysql.connector.connect(
+    host="localhost",     # XAMPP MySQL host
+    user="root",          # XAMPP MySQL username
+    password="",          # XAMPP MySQL password (empty by default)
+    database="final_klaus_ebooks_library"
+)
+cursor = conn.cursor(dictionary=True)
+
+# Step 1: Get all authors
+cursor.execute("SELECT id, name FROM authors")
+authors = cursor.fetchall()
+
+# Step 2: Count books for each author
+authors_with_few_books = []
+
+for author in authors:
+    author_id = str(author["id"])
+
+    # Find books where this author_id appears in books.author_ids
+    query = """
+        SELECT COUNT(*) AS book_count 
+        FROM books 
+        WHERE FIND_IN_SET(%s, author_ids)
+    """
+    cursor.execute(query, (author_id,))
+    result = cursor.fetchone()
+    book_count = result["book_count"]
+
+    if book_count < 10:
+        authors_with_few_books.append(
+            (author["id"], author["name"], book_count))
+
+# Step 3: Print results
+print("Authors with fewer than 10 books:\n")
+for author_id, name, count in authors_with_few_books:
+    print(f"ID: {author_id} | Name: {name} | Books: {count}")
+
+cursor.close()
+conn.close()
+
+import csv
+import re
+
+def merge_authors1(tbl_author_file="update_authors_final.csv",
+                  tbl_author_old_file="tbl_author_old.csv",
+                  output_file="updated_authors_final.csv"):
+    """
+    Merge tbl_author.csv and tbl_author_old.csv into updated_authors_final.csv.
+    Rules:
+      - Match on id (tbl_author.id → tbl_author_old.author_id)
+      - Update info if NULL, empty, or 'No Description available'
+      - For URLs, prefer one starting with 'https://www', else non-empty
+      - Collapse multiple spaces in names
+      - Keep all rows from both files
+    """
+    
+    def clean_name(name: str) -> str:
+        return re.sub(r"\s+", " ", name.strip()) if name else name
+
+    def pick_url(url1, url2):
+        url1 = url1 or ""
+        url2 = url2 or ""
+        if url1.startswith("https://www"):
+            return url1
+        if url2.startswith("https://www"):
+            return url2
+        return url1 or url2
+
+    # Load tbl_author.csv
+    authors1 = {}
+    with open(tbl_author_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            row_id = row["id"]
+            row["name"] = clean_name(row["name"])
+            authors1[row_id] = row
+
+    # Load tbl_author_old.csv
+    authors2 = {}
+    with open(tbl_author_old_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            row_id = row["author_id"]
+            row["author_name"] = clean_name(row["author_name"])
+            authors2[row_id] = row
+
+    # Merge all unique IDs
+    all_ids = set(authors1.keys()) | set(authors2.keys())
+    merged = {}
+
+    for aid in all_ids:
+        row1 = authors1.get(aid)
+        row2 = authors2.get(aid)
+
+        if row1 and row2:
+            merged_row = {
+                "id": row1["id"],
+                "name": row1["name"] or row2["author_name"],
+                "info": row1["info"] if row1["info"] not in (None, "", "No Description available") else row2.get("author_description", ""),
+                "image": row1["image"] or row2.get("author_image", ""),
+                "facebook_url": pick_url(row1.get("facebook_url"), row2.get("author_facebook")),
+                "instagram_url": pick_url(row1.get("instagram_url"), row2.get("author_instagram")),
+                "youtube_url": pick_url(row1.get("youtube_url"), row2.get("author_youtube")),
+                "website_url": pick_url(row1.get("website_url"), row2.get("author_website")),
+                "status": row1.get("status") or row2.get("status") or "1"
+            }
+            merged[aid] = merged_row
+
+        elif row1:
+            merged_row = {
+                "id": row1["id"],
+                "name": row1["name"],
+                "info": row1.get("info", ""),
+                "image": row1.get("image", ""),
+                "facebook_url": row1.get("facebook_url", ""),
+                "instagram_url": row1.get("instagram_url", ""),
+                "youtube_url": row1.get("youtube_url", ""),
+                "website_url": row1.get("website_url", ""),
+                "status": row1.get("status", "1")
+            }
+            merged[aid] = merged_row
+
+        else:  # row2 only
+            merged_row = {
+                "id": row2["author_id"],
+                "name": row2["author_name"],
+                "info": row2.get("author_description", ""),
+                "image": row2.get("author_image", ""),
+                "facebook_url": row2.get("author_facebook", ""),
+                "instagram_url": row2.get("author_instagram", ""),
+                "youtube_url": row2.get("author_youtube", ""),
+                "website_url": row2.get("author_website", ""),
+                "status": row2.get("status", "1")
+            }
+            merged[aid] = merged_row
+
+    # Write merged CSV
+    fieldnames = ["id", "name", "info", "image", "facebook_url", "instagram_url", "youtube_url", "website_url", "status"]
+    with open(output_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for aid in sorted(merged.keys(), key=lambda x: int(x)):
+            writer.writerow(merged[aid])
+
+    print(f"✅ Merged authors written to {output_file}")
+
+merge_authors1()
+
+import csv
+
+subcat_file = "sub_cat12.csv"
+cat_file = "categories.csv"
+output_file = "categories_filtered.csv"
+
+# Step 1: Collect all used cat_ids from sub_cat12.csv
+used_cat_ids = set()
+with open(subcat_file, newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        used_cat_ids.add(row["cat_id"])
+
+# Step 2: Filter categories.csv based on used cat_ids
+filtered_rows = []
+with open(cat_file, newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    fieldnames = reader.fieldnames
+    for row in reader:
+        if row["id"] in used_cat_ids:
+            filtered_rows.append(row)
+
+# Step 3: Write new categories file
+with open(output_file, "w", newline="", encoding="utf-8") as f:
+    writer = csv.DictWriter(f, fieldnames=fieldnames)
+    writer.writeheader()
+    writer.writerows(filtered_rows)
+
+print(f"✅ Created {output_file} with only used categories.")
+
+book_url="https://www.goodreads.com/book/show/23824599"
+book_url_local=''
+random_header={
+            "User-Agent": random.choice(LIST_OF_USER_AGENTS),
+            "Accept-Language": "en-US,en;q=0.9",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp",
+            "Referer": "https://www.google.com/"
+        }
+
+bookd=scrape_book(book_url,book_url_local, random_header)
+
+
+import csv
+import re
+
+def merge_authors(tbl_author_file="tbl_author.csv",
+                  authors_final_file="authors_final.csv",
+                  output_file="update_authors_final.csv"):
+    """
+    Merge tbl_author.csv and authors_final.csv into update_authors_final.csv.
+    Rules:
+      - Match on id
+      - Update info if NULL or 'No Description available'
+      - For URLs, prefer one starting with 'https://www', else non-empty one
+      - Collapse multiple spaces in names into a single space
+      - If id only exists in one file, keep that row
+    """
+    
+    def clean_name(name: str) -> str:
+        return re.sub(r"\s+", " ", name.strip())
+
+    def pick_url(url1, url2):
+        if url1 and url1.startswith("https://www"):
+            return url1
+        if url2 and url2.startswith("https://www"):
+            return url2
+        return url1 or url2 or ""
+
+    # Load both files into dicts keyed by id
+    tbl_authors = {}
+    with open(tbl_author_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            row["name"] = clean_name(row["name"])
+            tbl_authors[row["id"]] = row
+
+    authors_final = {}
+    with open(authors_final_file, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            row["name"] = clean_name(row["name"])
+            authors_final[row["id"]] = row
+
+    # Merge keys from both
+    all_ids = set(tbl_authors.keys()) | set(authors_final.keys())
+    merged = {}
+
+    for aid in all_ids:
+        row1 = tbl_authors.get(aid)
+        row2 = authors_final.get(aid)
+
+        if row1 and row2:
+            # Merge case
+            merged_row = row2.copy()
+
+            # Update info
+            if merged_row["info"] in (None, "", "NULL", "No Description available"):
+                merged_row["info"] = row1["info"]
+
+            # Update URLs
+            for field in ["facebook_url", "instagram_url", "youtube_url", "website_url"]:
+                merged_row[field] = pick_url(merged_row.get(field, ""), row1.get(field, ""))
+
+            # Update image if missing
+            if not merged_row.get("image") and row1.get("image"):
+                merged_row["image"] = row1["image"]
+
+            merged_row["name"] = clean_name(merged_row["name"])
+            merged[aid] = merged_row
+
+        elif row1:  # Only in tbl_author.csv
+            merged[aid] = row1
+        else:       # Only in authors_final.csv
+            merged[aid] = row2
+
+    # Write merged file
+    fieldnames = ["id", "name", "info", "image", 
+                  "facebook_url", "instagram_url", 
+                  "youtube_url", "website_url", "status"]
+    with open(output_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        for aid in sorted(merged.keys(), key=lambda x: int(x)):
+            writer.writerow(merged[aid])
+
+    print(f"✅ Merged authors written to {output_file}")
+    
+merge_authors()
+
+import csv
+import os
+
+CSV_FILE = "goodreads_books.csv"
+OUTPUT_FILE = "goodreads_added.csv"
+
+# Step 1: Load existing titles from goodreads_added.csv (if file exists)
+already_added = set()
+if os.path.isfile(OUTPUT_FILE):
+    with open(OUTPUT_FILE, newline="", encoding="utf-8") as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            already_added.add(row["Title"].strip().lower())  # normalize case/spacing
+
+# Step 2: Process goodreads_books.csv
+with open(CSV_FILE, newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        title = row["Title"].strip()
+        author = row["Author"].strip()
+        link = row["Link"].strip()
+
+        # Skip if title already processed
+        if title.lower() in already_added:
+            print(f"Skipping (already added): {title} by {author}")
+            continue
+
+        print(f"Processing: {title} by {author}: {link}")
+
+        search_query = f"{title} by {author}"
+        successful_download = Ocean_of_pdf_search_books_by_Author_in_one(
+            search_query,
+            first_n_books=1,
+            folder_name="goodreads_books"
+        )
+
+        if successful_download:
+            with open(OUTPUT_FILE, "a", newline="", encoding="utf-8") as out_f:
+                writer = csv.DictWriter(out_f, fieldnames=["Title", "Author", "Link"])
+                writer.writerow({
+                    "Title": title,
+                    "Author": author,
+                    "Link": link
+                })
+            already_added.add(title.lower())  # update set immediately
+
+
+
+import os
+
+path = r"C:\cracks\My_App\epub-library-manager\upload"
+
+result = []
+
+for name in os.listdir(path):
+    folder_path = os.path.join(path, name)
+    if os.path.isdir(folder_path):
+        # Count only .pdf and .epub files inside the folder (not subfolders)
+        count = sum(
+            1 for f in os.listdir(folder_path)
+            if os.path.isfile(os.path.join(folder_path, f)) and f.lower().endswith((".pdf", ".epub"))
+        )
+        
+        if count < 10:
+            result.append(name.replace("_", " "))
+
+for folder in result:
+    print(f"Searching for: {folder} books")
+    Ocean_of_pdf_search_books_by_Author(search_query=folder,first_n_books=5)
+
+
+
+
+
+
