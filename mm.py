@@ -1,107 +1,108 @@
-def scrape_goodreads_books_raw(url, author_name, book_title=None):
-    try:
-        print(f"🔍 Scraping Goodreads raw for: {book_title} by {author_name} from {url}")
-        headers = {
-            "User-Agent": random.choice(LIST_OF_USER_AGENTS),
-            "Accept-Language": "en-US,en;q=0.9",
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp",
-            "Referer": "https://www.google.com/"
-        }
-        request = urllib.request.Request(url, headers=headers)
-        with urllib.request.urlopen(request) as response:
-            source = response.read()
-
-        soup = BeautifulSoup(source, "html.parser")
-        book_containers = soup.find_all(
-            'tr', itemtype='http://schema.org/Book')
-
-        if not book_containers:
-            book_containers = soup.find_all(
-                'tr', {'itemtype': 'http://schema.org/Book'})
-        if not book_containers:
-            return None
-
-        book_matches = []
-        search_query = extract_search_query(url)
-        search_title = book_title if book_title else search_query
-
-        for container in book_containers:
-            try:
-                title_element = container.find('a', class_='bookTitle')
-                if not title_element:
-                    continue
-                title_link = title_element.get("href")
-                raw_title = title_element.text.strip()
-                if not title_link:
-                    continue
-
-                cleaned_title = remove_parentheses_content(raw_title)
-                authors = [a.text.strip()
-                           for a in container.find_all('a', class_='authorName')]
-                complete_book_url = clean_url(GOODREADS_URL + title_link)
-                author_match = is_author_match(author_name, authors)
-                title_similarity = calculate_similarity_score(
-                    search_title, raw_title)
-                score = 0.7 * (1.0 if author_match else 0.0) + \
-                    0.3 * title_similarity
-
-                # --- Extract rating info ---
-                rating_span = container.find('span', class_='minirating')
-                avg_rating, total_ratings = 0.0, 0
-                if rating_span:
-                    try:
-                        rating_text = rating_span.text.strip()
-                        avg_rating_match = re.search(
-                            r'([\d.]+) avg rating', rating_text)
-                        total_ratings_match = re.search(
-                            r'— ([\d,]+) ratings', rating_text)
-                        if avg_rating_match:
-                            avg_rating = float(avg_rating_match.group(1))
-                        if total_ratings_match:
-                            total_ratings = int(
-                                total_ratings_match.group(1).replace(',', ''))
-                    except Exception:
-                        pass
-
-                book_matches.append({
-                    'title': raw_title,
-                    'cleaned_title': cleaned_title,
-                    'authors': authors,
-                    'url': complete_book_url,
-                    'author_match': author_match,
-                    'title_similarity': title_similarity,
-                    'score': score,
-                    'avg_rating': avg_rating,
-                    'total_ratings': total_ratings
-                })
-
-            except Exception as e:
-                print(f"Error processing container: {e}")
-
-        # --- Sort first by score, then by avg_rating, then total_ratings ---
-        book_matches.sort(key=lambda x: (
-            x['score'], x['avg_rating'], x['total_ratings']), reverse=True)
-
-        # --- Pick the best valid match ---
-        for match in book_matches:
-            if match['avg_rating'] > 0 and match['total_ratings'] >= 30:
-                print(
-                    f"✅ Best valid match: '{match['title']}' | Avg Rating: {match['avg_rating']} | Total Ratings: {match['total_ratings']}")
-                return match['url']
-
-        # If only one book is available, return it regardless of ratings
-        if len(book_matches) == 1:
-            match = book_matches[0]
-            print(
-                f"✅ Only one match available: '{match['title']}' | Avg Rating: {match.get('avg_rating', 0)} | Total Ratings: {match.get('total_ratings', 0)}")
-            return match['url']
-
-        return None
-
-    except Exception as e:
-        print(f"Error scraping Goodreads books: {e}")
-        return None
-
-task:
-    Sort first by total_ratings and pick the one with highest total_ratings.
+if pdf is more than 10mb but epub is less than, return the epub form , check the filename_input: 
     
+def get_download_forms(book_url, scraper):
+    """
+    Fetch all download form details (id, filename) from a book page.
+    Returns only EPUB forms if available, otherwise returns other formats.
+    Skips forms if EPUB or PDF size > 10 MB.
+    """
+    try:
+        response = scraper.get(book_url, headers=headers, timeout=15)
+        response.raise_for_status()
+    except Exception as e:
+        print(f"[!] Failed to fetch {book_url}: {e}")
+        return []
+    
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    # --- Extract file sizes ---
+    def extract_size_in_mb(size_text):
+        """
+        Extract file size in MB from text like "24 MB" or "1.5 GB".
+        Returns size in MB as float, or None if cannot parse.
+        """
+        import re
+        
+        # Clean the text and look for size patterns
+        size_text = size_text.strip().upper()
+        
+        # Match patterns like "24 MB", "1.5 GB", "500 KB", etc.
+        match = re.search(r'(\d+\.?\d*)\s*(MB|GB|KB)', size_text)
+        
+        if not match:
+            return None
+        
+        size_value = float(match.group(1))
+        unit = match.group(2)
+        
+        # Convert to MB
+        if unit == "KB":
+            return size_value / 1024
+        elif unit == "MB":
+            return size_value
+        elif unit == "GB":
+            return size_value * 1024
+        
+        return None
+
+    entry_content = soup.find("div", class_="entry-content")
+    if not entry_content:
+        print(f"[!] Could not find entry-content div in {book_url}")
+        #eturn []
+        
+    ul_tag = entry_content.find("ul")
+    if not ul_tag:
+        print(f"[!] Could not find ul tag in entry-content div in {book_url}")
+        #eturn []
+    #rint(ul_tag)
+        # Extract file sizes
+        
+    pdf_size_mb = 0
+    epub_size_mb = 0
+    full_book_name = "Unknown"
+
+    for li in ul_tag.find_all("li"):
+        strong_text = li.find("strong")
+        if strong_text:
+            #rint(strong_text)
+            text = strong_text.get_text().strip()
+            if "Full Book Name" in text or "Full Book Name:" in text:
+                full_book_name = li.get_text().replace(text, "").strip()
+                #rint(full_book_name)
+            if "PDF File Size" in text or "PDF File Size:" in text:
+                # Extract size from the span or remaining text
+                size_text = li.get_text().replace(text, "").strip()
+                pdf_size_mb = extract_size_in_mb(size_text)
+                #rint(size_text)
+            elif "EPUB File Size:" in text or "EPUB File Size" in text:
+                # Extract size from the span or remaining text
+                size_text = li.get_text().replace(text, "").strip()
+                epub_size_mb = extract_size_in_mb(size_text)
+
+    # --- Skip if larger than 10 MB ---
+    if pdf_size_mb > 10 and  epub_size_mb > 10:
+        print(f"[!] Skipping {full_book_name} (PDF: {pdf_size_mb} MB, EPUB: {epub_size_mb} MB) too large")
+        return []
+
+    # --- Process forms ---
+    forms = soup.find_all("form", action="https://oceanofpdf.com/Fetching_Resource.php")
+    epub_forms, other_forms = [], []
+
+    for form in forms:
+        id_input = form.find("input", {"name": "id"})
+        filename_input = form.find("input", {"name": "filename"})
+        
+        if id_input and filename_input:
+            file_ext = filename_input["value"].split(".")[-1].lower()
+            form_data = {
+                "id": id_input["value"],
+                "filename": filename_input["value"]
+            }
+            if file_ext == "epub":
+                epub_forms.append(form_data)
+            else:
+                other_forms.append(form_data)
+
+    time.sleep(3)  # throttle requests
+    return epub_forms if epub_forms else other_forms
+

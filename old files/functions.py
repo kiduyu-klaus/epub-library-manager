@@ -3263,6 +3263,82 @@ for folder in result:
     Ocean_of_pdf_search_books_by_Author(search_query=folder,first_n_books=5)
 
 
+from bs4 import BeautifulSoup
+import requests
+
+
+
+base_url = 'https://www.goodreads.com'
+series_url = 'https://www.goodreads.com/series/40549-jack-reacher'
+headers = {
+    # Add necessary headers here
+}
+books = []
+
+url = series_url
+book_count = 0  # Initialize book counter
+while url:
+    print(f"Fetching URL: {url}")  # Print the current URL being fetched
+    try:
+        response = scraper.get(url, headers=headers, timeout=15)
+        response.raise_for_status()
+    except Exception as e:
+        print(f"[!] Failed to fetch {url}: {e}")
+        break  # Exit the loop if the request fails
+
+    soup = BeautifulSoup(response.text, 'html.parser')
+    
+    # Scrape titles, authors, and book numbers
+    for title_tag in soup.find_all('a', class_='gr-h3'):
+        title = title_tag.get_text(strip=True)
+        author = None
+        parent = title_tag.parent
+        if parent:
+            author_span = parent.find_next('span', itemprop='author')
+            if author_span:
+                author_link = author_span.find('a')
+                if author_link:
+                    author = author_link.get_text(strip=True)
+                else:
+                    author = author_span.get_text(strip=True)
+        
+        # Find book number
+        book_number_tag = parent.find_previous('h3', class_='gr-h3 gr-h3--noBottomMargin') if parent else None
+        book_number = book_number_tag.get_text(strip=True) if book_number_tag else "Unknown"
+        
+        if title and author:
+            book_count += 1
+            books.append((book_number, title, author))
+            print(f"Book {book_count}: Number: {book_number}, Title: {title}, Author: {author}")  # Print each book found
+    
+    # Check for next page
+    next_button = soup.select_one('div.gr-paginationLinks button.gr-paginationLinks__nextButton')
+    if next_button and 'disabled' not in next_button.attrs:
+        # The "Next" button is enabled, find the next page URL
+        page_num_buttons = soup.select('div.gr-paginationLinks button.gr-paginationLinks__pageNumLink')
+        current_page = soup.select_one('div.gr-paginationLinks span.gr-paginationLinks__pageNumLink--selected').text
+        next_page_num = str(int(current_page) + 1)
+        next_page_button = None
+        for btn in page_num_buttons:
+            if btn.text == next_page_num:
+                next_page_button = btn
+                break
+        if next_page_button:
+            url = series_url + f'?page={next_page_num}'
+            print(f"Next page URL: {url}")  # Print the next page URL
+        else:
+            print("No next page button found. Ending pagination.")  # Print if no next page button is found
+            url = None
+    else:
+        print("No more pages to fetch. Ending pagination.")  # Print if no more pages are available
+        url = None
+
+# Print titles, authors, and book numbers
+print("\nAll books found:")
+for num, t, a in books:
+    print(f'Number: {num}, Title: {t}, Author: {a}')
+
+
 
 
 
