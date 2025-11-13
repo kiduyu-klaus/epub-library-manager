@@ -168,6 +168,8 @@ cython_debug/
 # Ignore all files in the upload/ and uploads/ folders (recursively)
 upload/
 uploads/
+old files/
+books/
 
 .env
 secrets.env
