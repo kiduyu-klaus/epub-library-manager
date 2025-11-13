@@ -3339,7 +3339,100 @@ for num, t, a in books:
     print(f'Number: {num}, Title: {t}, Author: {a}')
 
 
+def save_subcategories(combined_map, categories_file="categories_filtered.csv", output_file="sub_cat.csv"):
+    """
+    Save combined_map entries into sub_cat.csv with schema:
+    "id","cat_id","sub_category_name","sub_category_image","status"
 
+    - Detects the category (first part of the key).
+    - Uses categories_filtered.csv to find the correct cat_id.
+    - If category missing, auto-adds it to categories_filtered.csv with a new id.
+    """
+    # Load categories
+    categories_df = pd.read_csv(categories_file)
+
+    # Normalize names
+    categories_df["category_name"] = categories_df["category_name"].str.strip().str.lower()
+
+    # Prepare output
+    if os.path.isfile(output_file):
+        os.remove(output_file)
+
+    with open(output_file, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow(["id", "cat_id", "sub_category_name", "sub_category_image", "status"])
+
+        for idx, (key, sub_category_name) in enumerate(combined_map.items(), start=1):
+            main_category = key[0].strip().lower()
+
+            # Check if category exists
+            if main_category in categories_df["category_name"].values:
+                cat_id = int(categories_df.loc[categories_df["category_name"] == main_category, "id"].values[0])
+            else:
+                # Create new category
+                new_id = categories_df["id"].max() + 1 if not categories_df.empty else 1
+                new_row = {
+                    "id": new_id,
+                    "category_name": main_category,
+                    "category_image": f"upload/{main_category.replace(' ', '_')}.png",
+                    "status": 1
+                }
+                categories_df = pd.concat([categories_df, pd.DataFrame([new_row])], ignore_index=True)
+                categories_df.to_csv(categories_file, index=False)
+                cat_id = new_id
+                print(f"🆕 Added missing category: {main_category} with id={new_id}")
+
+            # Create image filename
+            sub_category_image = sub_category_name.lower().replace(" ", "_") + ".png"
+
+            writer.writerow([idx, cat_id, sub_category_name, sub_category_image, "0"])
+
+    print(f"✅ Saved {len(combined_map)} subcategories to {output_file}")
+    return categories_df
+
+    
+def auto_add_missing_categories(categories_file, subcategories_file, output_file):
+    """
+    Auto-add missing categories from subcategories_file into categories_file 
+    if they don't already exist, and save to a new output CSV.
+
+    Args:
+        categories_file (str): Path to the categories CSV (with existing categories).
+        subcategories_file (str): Path to the subcategories CSV (may contain new categories).
+        output_file (str): Path to save the updated categories CSV.
+
+    Returns:
+        pd.DataFrame: The updated categories DataFrame.
+    """
+    # Load CSVs
+    categories_df = pd.read_csv(categories_file)
+    subcats_df = pd.read_csv(subcategories_file)
+
+    # Ensure 'category' column exists
+    if "category" not in categories_df.columns or "category" not in subcats_df.columns:
+        raise ValueError("Both CSVs must contain a 'category' column.")
+
+    # Find missing categories
+    existing_categories = set(categories_df["category"].str.strip().str.lower())
+    subcat_categories = set(subcats_df["category"].str.strip().str.lower())
+
+    missing = subcat_categories - existing_categories
+
+    if missing:
+        print(f"Adding missing categories: {missing}")
+        # Append missing categories as new rows
+        new_rows = pd.DataFrame({"category": list(missing)})
+        categories_df = pd.concat([categories_df, new_rows], ignore_index=True)
+
+    # Save updated categories
+    categories_df.to_csv(output_file, index=False)
+
+    return categories_df
+
+combined_map = load_combined_map("combined_map.txt")
+
+# Save to CSV
+updated_categories = save_subcategories(combined_map, "categories_filtered.csv", "sub_cat.csv")
 
 
 
