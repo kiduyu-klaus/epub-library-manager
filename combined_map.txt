@@ -217,6 +217,7 @@
     ('nonfiction', 'humor'): 'Humorous Memoir',
     ('nonfiction', 'science'): 'Non-Fiction Science',
     ('nonfiction', 'self-help'): 'Non-Fiction Self-Help',
+    ('nonfiction', 'self help'): 'Non-Fiction Self-Help',
     ('nonfiction', 'true crime'): 'True Crime Memoir',
 
     # ============================================
